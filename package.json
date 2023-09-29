@@ -1,0 +1,14 @@
+{
+  "name": "deltion-roosters-api",
+  "version": "1.0.0",
+  "description": "Deze api gebruikt de roosters.deltion.nl/api als basis.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

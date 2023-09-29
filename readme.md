@@ -1,2 +1,5 @@
 # Deltion Roosters API
-Dit is een repository voor de api van het deltion roosters.
+Deze api gebruikt de roosters.deltion.nl/api als basis.
+
+## Hoe gebruik je deze api?
+WIP

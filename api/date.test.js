@@ -8,5 +8,7 @@ module.exports = async (req, res) => {
 
     resp.zone = date.getTimezoneOffset();
 
+    resp.weekday = date.getDay();
+
     res.send(resp);
 }

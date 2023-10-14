@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/roster", require('./api/roster.js'));
+app.get("/roster/day", require("./api/roster.day.js"))
 
 
 // Tests

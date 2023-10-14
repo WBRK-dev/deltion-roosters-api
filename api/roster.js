@@ -27,6 +27,7 @@ module.exports = async (req, res) => {
     results = await rawResponse.json();
 
     results.calculated_time = currentDate;
+    results.calculated_date = `${start}-${end}`;
 
     res.send(results);
 }

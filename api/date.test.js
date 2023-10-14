@@ -5,5 +5,7 @@ module.exports = async (req, res) => {
 
     resp.date = date;
 
+    resp.zone = date.getTimezoneOffset();
+
     res.send(resp);
 }

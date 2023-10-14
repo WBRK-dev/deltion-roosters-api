@@ -9,10 +9,7 @@ function convertDate(num) {
 module.exports = async (req, res) => {
     day = Number(req.query.day) || 0;
     group = req.query.group;
-
-    // timeResponse = await fetch("https://timeapi.io/api/Time/current/zone?timeZone=Europe/Amsterdam");
-    // jsonResponse = await timeResponse.json();
-    // currentDate = new Date(jsonResponse.dateTime);
+    
     currentDate = new Date();
 
     firstDate = new Date(currentDate.getFullYear(), (currentDate.getMonth() + 1), (currentDate.getDate() + day)); 

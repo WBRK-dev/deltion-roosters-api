@@ -4,6 +4,7 @@ module.exports = async (req, res) => {
     date = new Date(req.query.date);
 
     resp.date = date;
+    resp.ext_date = date.toString();
 
     resp.zone = date.getTimezoneOffset();
 

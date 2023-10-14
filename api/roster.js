@@ -10,13 +10,9 @@ module.exports = async (req, res) => {
     week = req.query.week || 0;
     group = req.query.group;
 
-    let currentDate = req.query.clientDate;
-
-    if (currentDate) {
-        currentDate = new Date(currentDate);
-    } else {
-        currentDate = new Date();
-    }
+    timeResponse = await fetch("https://timeapi.io/api/Time/current/zone?timeZone=Europe/Amsterdam");
+    jsonResponse = await timeResponse.json();
+    currentDate = new Date(jsonResponse.dateTime);
 
     firstDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - (currentDate.getDay() - 1)); 
     lastDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1 + (7 - currentDate.getDay())); 

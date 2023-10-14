@@ -14,8 +14,8 @@ module.exports = async (req, res) => {
     jsonResponse = await timeResponse.json();
     currentDate = new Date(jsonResponse.dateTime);
 
-    firstDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - (currentDate.getDay() - 1)); 
-    lastDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1 + (7 - currentDate.getDay())); 
+    firstDate = new Date(currentDate.getFullYear(), (currentDate.getMonth() + 1), currentDate.getDate() - (currentDate.getDay() - 1)); 
+    lastDate = new Date(currentDate.getFullYear(), (currentDate.getMonth() + 1), currentDate.getDate() + 1 + (7 - currentDate.getDay())); 
 
     start = `${firstDate.getFullYear()}${convertDate(firstDate.getMonth())}${convertDate(firstDate.getDate())}`;
     end = `${lastDate.getFullYear()}${convertDate(lastDate.getMonth())}${convertDate(lastDate.getDate())}`;

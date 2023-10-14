@@ -8,13 +8,12 @@ function convertDate(num) {
 
 module.exports = async (req, res) => {
     week = req.query.week || 0;
-    group = req.query.group || "SD1A";
+    group = req.query.group;
 
     let currentDate = req.query.clientDate;
 
     if (currentDate) {
-        currentDate = currentDate.split("-");
-        currentDate = new Date(`${currentDate[1]} ${(Number(currentDate[2]) + 1)} ${currentDate[0]}`);
+        currentDate = new Date(currentDate);
     } else {
         currentDate = new Date();
     }

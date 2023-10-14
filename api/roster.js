@@ -10,7 +10,14 @@ module.exports = async (req, res) => {
     week = req.query.week || 0;
     group = req.query.group || "SD1A";
 
-    (req.query.clientDate) ? currentDate = new Date(req.query.clientDate) : currentDate = currentDate = new Date();
+    let currentDate = req.query.clientDate;
+
+    if (currentDate) {
+        currentDate = currentDate.split("-");
+        currentDate = new Date(`${currentDate[1]} ${currentDate[2]} ${currentDate[0]}`);
+    } else {
+        currentDate = new Date();
+    }
 
     firstDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - (currentDate.getDay() - 1)); 
     lastDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1 + (7 - currentDate.getDay())); 

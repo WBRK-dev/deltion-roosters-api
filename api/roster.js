@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
 
     if (currentDate) {
         currentDate = currentDate.split("-");
-        currentDate = new Date(`${currentDate[1]} ${currentDate[2]} ${currentDate[0]}`);
+        currentDate = new Date(`${currentDate[1]} ${(Number(currentDate[2]) + 1)} ${currentDate[0]}`);
     } else {
         currentDate = new Date();
     }
@@ -30,6 +30,8 @@ module.exports = async (req, res) => {
         }
     });
     results = await rawResponse.json();
+
+    results.calculated_time = currentDate;
 
     res.send(results);
 }
